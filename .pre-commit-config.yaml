@@ -6,6 +6,6 @@ repos:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
 -   repo: https://github.com/jessicamann/precommit-hooks
-    rev: main
+    rev: v0.0.1
     hooks:
     -   id: story-trailer
