@@ -1,22 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-# Path to the commit message file
 COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
 
-echo "adding trailers to $COMMIT_MSG_FILE"
-
-# Check if STORYNUMBER environment variable is set
-if [ -z "$STORYNUMBER" ]; then
-echo "Warning: STORYNUMBER environment variable is not set. Skipping Jira trailer."
-else
-# Add the Jira story number trailer to the commit message
-# echo "" >> "$COMMIT_MSG_FILE"
-# echo "jira: $STORYNUMBER" >> "$COMMIT_MSG_FILE"
-
-git interpret-trailers --in-place --trailer "jira: $STORYNUMBER" "$COMMIT_MSG_FILE"
-if test -z "$COMMIT_SOURCE"
-then
-  /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number" ]; then
+    STORYNUMBER=$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number")
 fi
 
+if [ -z "$STORYNUMBER" ]; then
+    echo "warning: no jira ref found; maybe you forgot to do 'git story'?"
+else
+    git interpret-trailers --in-place --trailer "jira: $STORYNUMBER" "$COMMIT_MSG_FILE"
+    if test -z "$COMMIT_SOURCE"; then
+        /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+    fi
 fi
