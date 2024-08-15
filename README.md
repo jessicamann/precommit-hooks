@@ -6,18 +6,7 @@ This repo contains two utilities:
 
 <br>
 
-To automatically add a trailer to your commit messages, linking it back to the story you're working on.
-
-```
-git story TEAM-93
-git commit -m "allow consumers to limit size of paginated results"
-```
-
-And get this commit message:
-
-> allow consumers to limit size of paginated results
->
-> Story: TEAM-93
+![](assets/demo.mov)
 
 <br>
 
