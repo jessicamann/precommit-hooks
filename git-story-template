@@ -5,15 +5,30 @@ COMMAND=$1
 if [ -z "$COMMAND" ]; then
     echo "Usage: git story <command|story-ref> "
     echo ""
-    echo "These are the available commands:"
-    echo "\tstory-ref: sets story reference to the provided ref"
+    echo "Set the story ref"
+    echo "\t git story TEAM-123"
+    echo ""
+    echo "Commands available:"
     echo "\tclear: clears existing story reference"
+    echo "\tshow: show current story ref"
     exit 1
 fi
 
 
 if [ $COMMAND = "clear" ]; then
     rm "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number" 2&>/dev/null
+    exit 0
+fi
+
+if [ $COMMAND = "show" ]; then
+    if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number" ]; then
+        STORYNUMBER=$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number")
+        echo ""
+        echo "Current story ref: $STORYNUMBER"
+    else
+        echo ""
+        echo "No story ref set"
+    fi
     exit 0
 fi
 
