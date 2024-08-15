@@ -4,3 +4,18 @@ repos:
     hooks:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
+# -   repo: local
+#     stages: [commit-msg]
+#     hooks:
+#     - id: set-jira-trailer
+#       name: Add jira reference to commit trailers
+#       entry: ./hooks/story
+#       language: script
+- repo: local
+  hooks:
+    - id: prepare-commit-msg
+      name: prepare-commit-msg
+      entry: ./hooks/story
+      stages: [prepare-commit-msg]
+      language: system
+      verbose: true

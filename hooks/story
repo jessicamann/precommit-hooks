@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Path to the commit message file
+COMMIT_MSG_FILE=$1
+
+# Check if STORYNUMBER environment variable is set
+if [ -z "$STORYNUMBER" ]; then
+echo "Warning: STORYNUMBER environment variable is not set. Skipping Jira trailer."
+else
+# Add the Jira story number trailer to the commit message
+echo "" >> "$COMMIT_MSG_FILE"
+echo "jira: $STORYNUMBER" >> "$COMMIT_MSG_FILE"
+fi
