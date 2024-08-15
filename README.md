@@ -6,10 +6,6 @@ This repo contains two utilities:
 
 <br>
 
-![](assets/demo.mov)
-
-<br>
-
 ## ⚙️ setup `git story`
 
 Create a file for the git extension.
