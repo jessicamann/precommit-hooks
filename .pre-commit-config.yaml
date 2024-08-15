@@ -9,6 +9,6 @@ repos:
     hooks:
     -   id: story-trailer
         name: Add story ref to commit trailer
-        entry: ./cmd/story-trailer
+        entry: cmd/story-trailer
         stages: [prepare-commit-msg]
         language: script
