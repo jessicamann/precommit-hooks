@@ -7,11 +7,9 @@ if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number" ]; then
     STORYNUMBER=$(cat "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number")
 fi
 
-echo 'foo'
 if [ -z "$STORYNUMBER" ]; then
     echo "warning: no story ref found; maybe you forgot to do 'git story'?"
 else
-    echo 'bar'
     git interpret-trailers --in-place --trailer "Story: $STORYNUMBER" "$COMMIT_MSG_FILE"
     if test -z "$COMMIT_SOURCE"; then
         /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
