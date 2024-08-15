@@ -10,6 +10,13 @@ if [ -z "$STORYNUMBER" ]; then
 echo "Warning: STORYNUMBER environment variable is not set. Skipping Jira trailer."
 else
 # Add the Jira story number trailer to the commit message
-echo "" >> "$COMMIT_MSG_FILE"
-echo "jira: $STORYNUMBER" >> "$COMMIT_MSG_FILE"
+# echo "" >> "$COMMIT_MSG_FILE"
+# echo "jira: $STORYNUMBER" >> "$COMMIT_MSG_FILE"
+
+git interpret-trailers --in-place --trailer "jira: $STORYNUMBER" "$COMMIT_MSG_FILE"
+if test -z "$COMMIT_SOURCE"
+then
+  /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+fi
+
 fi
