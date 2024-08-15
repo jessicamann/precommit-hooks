@@ -18,19 +18,13 @@ And get this commit message:
 Create a file for the git extension
 
 ```zsh
-cp git-story-template git-story
+sudo curl https://raw.githubusercontent.com/jessicamann/precommit-hooks/main/git-story-template -o /usr/local/bin/git-story && sudo chmod +x /usr/local/bin/git-story
 ```
 
 Make it executable
 
 ```zsh
 chmod +x git-story
-```
-
-Move git-story to a place executables should live
-
-```zsh
-sudo mv git-story /usr/local/bin
 ```
 
 Now use it!
@@ -49,11 +43,8 @@ In your `.pre-commit-config.yaml`, add the hook
 default_install_hook_types: [pre-commit,prepare-commit-msg]
 repos:
 -   ...your other hooks
--   repo: https://laksdjlfkjl/our-hooks-repo
+-   repo: https://github.com/jessicamann/precommit-hooks
+    rev: v0.0.1
     hooks:
     -   id: story-trailer
-        name: Add story ref to commit trailer
-        entry: cmd/story-trailer
-        stages: [prepare-commit-msg]
-        language: script
 ```
