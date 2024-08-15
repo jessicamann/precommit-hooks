@@ -1,9 +1,9 @@
-# "git story" + story-trailer precommit
+# git story + story-trailer precommit
 
 To automatically add a trailer to your commit messages, linking it back to the story you're working on.
 
 ```
-git story ST-93
+git story TEAM-93
 git commit -m "allow consumers to limit size of paginated results"
 ```
 
@@ -11,9 +11,9 @@ And get this commit message:
 
 > allow consumers to limit size of paginated results
 >
-> Story: ST-93
+> Story: TEAM-93
 
-## setup "git story"
+## ⚙️ setup `git story`
 
 Create a file for the git extension
 
@@ -32,7 +32,7 @@ Now use it!
 git story <story-id>
 ```
 
-## automate story link trailer with "story-trailer"
+## 🤖 automate story link trailer with "story-trailer"
 
 In your `.pre-commit-config.yaml`, add the hook
 
