@@ -19,15 +19,6 @@ fi
 
 STORYNUMBER=$1
 
-if [ -z "$STORYNUMBER" ]; then
-    read -p "please enter the story reference e.g. TI-234: " STORYNUMBER
-
-    if [ -z "$STORYNUMBER" ]; then
-        echo "no story number provided"
-        exit 1
-    fi
-fi
-
 if [ -d "$XDG_CONFIG_HOME" ]; then
     echo "$STORYNUMBER" > "$XDG_CONFIG_HOME/.story-number"
 else
