@@ -3,6 +3,8 @@
 # Path to the commit message file
 COMMIT_MSG_FILE=$1
 
+echo "adding trailers to $COMMIT_MSG_FILE"
+
 # Check if STORYNUMBER environment variable is set
 if [ -z "$STORYNUMBER" ]; then
 echo "Warning: STORYNUMBER environment variable is not set. Skipping Jira trailer."

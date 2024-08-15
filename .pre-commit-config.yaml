@@ -1,21 +1,15 @@
+default_install_hook_types: [pre-commit,prepare-commit-msg]
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
-# -   repo: local
-#     stages: [commit-msg]
-#     hooks:
-#     - id: set-jira-trailer
-#       name: Add jira reference to commit trailers
-#       entry: ./hooks/story
-#       language: script
-- repo: local
-  hooks:
-    - id: prepare-commit-msg
-      name: prepare-commit-msg
-      entry: ./hooks/story
-      stages: [prepare-commit-msg]
-      language: system
-      verbose: true
+-   repo: local
+    hooks:
+    -   id: prepare-commit-msg
+        name: prepare-commit-msg
+        entry: ./hooks/story
+        stages: [prepare-commit-msg]
+        language: script
+        verbose: true
