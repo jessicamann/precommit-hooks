@@ -6,6 +6,11 @@ This repo contains two utilities:
 
 <br>
 
+![](./assets/demo.gif)
+
+<br>
+
+
 ## ⚙️ setup `git story`
 
 Create a file for the git extension.
@@ -15,12 +20,6 @@ Create a file for the git extension.
 ```zsh
 sudo curl https://raw.githubusercontent.com/jessicamann/precommit-hooks/main/git-story-template -o /usr/local/bin/git-story && sudo chmod +x /usr/local/bin/git-story
 ```
-
-<br>
-
-![](./assets/demo.gif)
-
-<br>
 
 Now use it!
 ```
