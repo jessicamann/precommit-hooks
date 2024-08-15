@@ -1,0 +1,5 @@
+- id: story-trailer
+  name: Add story ref to commit trailer
+  entry: ./cmd/story-trailer
+  language: script
+  stages: [prepare-commit-msg]
