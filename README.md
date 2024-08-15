@@ -23,15 +23,9 @@ Create a file for the git extension.
 sudo curl https://raw.githubusercontent.com/jessicamann/precommit-hooks/main/git-story-template -o /usr/local/bin/git-story && sudo chmod +x /usr/local/bin/git-story
 ```
 
-Make it executable.
-
-```zsh
-chmod +x git-story
-```
-
 Now use it!
 ```
-git story <story-id>
+git story
 ```
 
 ## 🤖 automate story link trailer with "story-trailer"
