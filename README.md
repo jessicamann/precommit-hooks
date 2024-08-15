@@ -15,7 +15,7 @@ This repo contains two utilities:
 
 Create a file for the git extension.
 
-⚠️ Always read any script before downloading or executing script from the internet ⚠️
+⚠️ Always read any script before downloading or executing them from the internet ⚠️
 
 ```zsh
 sudo curl https://raw.githubusercontent.com/jessicamann/precommit-hooks/main/git-story-template -o /usr/local/bin/git-story && sudo chmod +x /usr/local/bin/git-story
