@@ -1,5 +1,11 @@
 # git story + story-trailer precommit
 
+This repo contains two utilities:
+1. a git extension `git story` to set the context of the story being worked on.
+2. a pre-commit hook `story-trailer` that works with [pre-commit](https://pre-commit.com/) to automatically add story trails to your commit messages.
+
+<br>
+
 To automatically add a trailer to your commit messages, linking it back to the story you're working on.
 
 ```
@@ -12,6 +18,8 @@ And get this commit message:
 > allow consumers to limit size of paginated results
 >
 > Story: TEAM-93
+
+<br>
 
 ## ⚙️ setup `git story`
 
@@ -28,7 +36,7 @@ Now use it!
 git story
 ```
 
-## 🤖 automate story link trailer with "story-trailer"
+## 🤖 add "story-trailer" hoook to your repo
 
 In your `.pre-commit-config.yaml`, add the hook
 
