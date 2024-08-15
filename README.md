@@ -42,3 +42,21 @@ repos:
     hooks:
     -   id: story-trailer
 ```
+
+## 🎭 behind the scenes
+
+### On the topic of global git story reference...
+
+The story reference is persisted in your XDG config home, so you don't need
+to re-specify it when starting a new session, creating a new commit, or
+moving across repos.
+
+I'm assuming you're limiting your WIP to one story at a time.
+
+### On the topic of story reference enforcements...
+
+Sometimes, you just don't have a story. And that's ok.
+
+No need to make it difficult for those making changes and enforcing what would be an unuseful trailer:
+
+"Story: TEAM-000"
