@@ -2,7 +2,7 @@
 
 This repo contains two utilities:
 1. a git extension `git story` to set the context of the story being worked on.
-2. a pre-commit hook `story-trailer` that works with [pre-commit](https://pre-commit.com/) to automatically add story trails to your commit messages.
+2. a pre-commit hook `story-trailer` that works with [pre-commit](https://pre-commit.com/) to automatically add story trailers to your commit messages.
 
 <br>
 
