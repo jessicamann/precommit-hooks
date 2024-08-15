@@ -1,9 +1,26 @@
 #!/usr/bin/env sh
 
+COMMAND=$1
+
+if [ -z "$COMMAND" ]; then
+    echo "Usage: git story <command|story-ref> "
+    echo ""
+    echo "These are the available commands:"
+    echo "\tstory-ref: sets story reference to the provided ref"
+    echo "\tclear: clears existing story reference"
+    exit 1
+fi
+
+
+if [ $COMMAND = "clear" ]; then
+    rm "${XDG_CONFIG_HOME:-$HOME/.config}/.story-number" 2&>/dev/null
+    exit 0
+fi
+
 STORYNUMBER=$1
 
 if [ -z "$STORYNUMBER" ]; then
-    read -p "Please enter the Jira story reference e.g. TI-234: " STORYNUMBER
+    read -p "please enter the story reference e.g. TI-234: " STORYNUMBER
 
     if [ -z "$STORYNUMBER" ]; then
         echo "no story number provided"
